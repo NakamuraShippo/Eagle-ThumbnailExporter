@@ -1,0 +1,134 @@
+{
+  "manifest": {
+    "app": {
+      "name": "Thumbnail Exporter"
+    }
+  },
+  "app": {
+    "title": "Thumbnail Exporter",
+    "eyebrow": "Eagle Batch Utility",
+    "hero": "Batch resize selected images, convert formats, compress them, and export them to an external folder."
+  },
+  "metrics": {
+    "selected": "Selected",
+    "success": "Success",
+    "error": "Failed"
+  },
+  "banner": {
+    "selectImages": "Please select images in Eagle and then open this plugin."
+  },
+  "settings": {
+    "title": "Output Settings",
+    "groupBasics": "Output Format",
+    "groupBasicsHint": "Choose the output format for the exported thumbnails.",
+    "groupResize": "Size and Compression",
+    "groupResizeHint": "Adjust the resize ratio and output compression for the selected format.",
+    "groupExport": "Export and Rename",
+    "groupExportHint": "Choose where converted files should go and control the prefix or suffix for exported files.",
+    "language": "Language",
+    "languageHint": "Auto follows the Eagle UI language.",
+    "languageAuto": "Auto (Eagle)",
+    "outputTargetType": "Save Destination",
+    "outputTargetFilesystem": "External Folder",
+    "outputTargetEagleFolder": "Eagle Folder",
+    "outputFormat": "Output Format",
+    "resizeRatio": "Resize Ratio",
+    "quality": "Quality",
+    "qualityHint": "Output quality for JPG / WEBP.",
+    "compressionLevel": "Compression Level",
+    "compressionLevelHint": "Compression level for PNG. Higher values mean stronger compression.",
+    "outputDirectory": "Output Folder",
+    "outputDirectoryPlaceholder": "Choose an output folder",
+    "eagleFolder": "Eagle Folder",
+    "eagleFolderHint": "Converted images will be imported into the selected Eagle folder.",
+    "eagleFolderPlaceholder": "Choose an Eagle folder",
+    "eagleFolderEmpty": "No Eagle folders available",
+    "rename": "Rename",
+    "renameNone": "No Change",
+    "renamePrefix": "Prefix",
+    "renameSuffix": "Suffix",
+    "renameText": "Added Text",
+    "renameTextPlaceholder": "thumb_"
+  },
+  "actions": {
+    "supportCreator": "Support on Patreon",
+    "reload": "Reload Selection",
+    "reloadFolders": "Refresh Folders",
+    "chooseFolder": "Choose Folder",
+    "start": "Start",
+    "cancel": "Cancel"
+  },
+  "list": {
+    "title": "Target Images",
+    "subtitleEmpty": "Selected images will appear here.",
+    "subtitleCount": "{{count}} images are ready for batch processing.",
+    "summaryNotStarted": "Not Started",
+    "summaryReady": "Ready",
+    "summaryNoItems": "No Items",
+    "summaryInitializing": "Initializing",
+    "summaryRunning": "Running",
+    "summaryPartial": "Completed with Errors",
+    "summaryCanceled": "Canceled",
+    "summaryCompleted": "Completed",
+    "summaryFailed": "Failed"
+  },
+  "table": {
+    "image": "Image",
+    "originalFile": "Original File",
+    "size": "Size",
+    "plannedOutput": "Planned Output",
+    "status": "Status"
+  },
+  "empty": {
+    "noSelection": "Select images in Eagle to see them here."
+  },
+  "status": {
+    "pending": "Pending",
+    "running": "Running",
+    "success": "Done",
+    "error": "Error",
+    "canceled": "Canceled",
+    "canceling": "Canceling"
+  },
+  "messages": {
+    "pluginInitWait": "Waiting for plugin initialization.",
+    "pluginInitInProgress": "The plugin is still initializing. Please try again in a moment.",
+    "selectionLoaded": "Loaded {{count}} images.",
+    "eagleFoldersLoaded": "Loaded {{count}} Eagle folders.",
+    "noEagleFolders": "No Eagle folders are available in this library.",
+    "loadItemsFailed": "Failed to load selected images: {{message}}",
+    "loadFoldersFailed": "Failed to load Eagle folders: {{message}}",
+    "outputDirectoryUpdated": "Output folder updated.",
+    "browseFailed": "Failed to choose an output folder: {{message}}",
+    "checkInputs": "Please review the input values.",
+    "ffmpegInstallRequired": "Install the FFmpeg Dependency Plugin and try again.",
+    "batchStarted": "Batch conversion started.",
+    "batchCompleted": "Completed {{count}} image conversions.",
+    "batchCompletedWithIssues": "Completed: {{success}} succeeded / {{error}} failed / {{canceled}} canceled",
+    "batchCanceled": "Stopped: {{success}} succeeded / {{canceled}} canceled",
+    "batchStartFailed": "Failed to start batch conversion: {{message}}",
+    "importedToFolder": "Imported to {{folder}}",
+    "canceling": "Canceling conversion.",
+    "runtimeUnavailable": "Some features are unavailable outside the Eagle runtime."
+  },
+  "validation": {
+    "selectItems": "Please select at least one image in Eagle.",
+    "chooseOutputDirectory": "Please choose an output folder.",
+    "chooseEagleFolder": "Please choose an Eagle folder.",
+    "resizeRatioRange": "The resize ratio must be between 10% and 100%.",
+    "pngCompressionRange": "PNG compression level must be between 0 and 9.",
+    "qualityRange": "Quality must be between 1 and 100.",
+    "renameTextLength": "Rename text must be 80 characters or fewer.",
+    "outputDirectoryAccess": "The output folder cannot be accessed. Please choose an existing folder.",
+    "eagleFolderUnavailable": "The selected Eagle folder is no longer available. Please choose another folder."
+  },
+  "dialogs": {
+    "chooseOutputTitle": "Choose Output Folder",
+    "chooseOutputButton": "Use This Folder",
+    "ffmpegMissingTitle": "FFmpeg dependency is required",
+    "ffmpegMissingMessage": "The FFmpeg Dependency Plugin is required for image conversion.",
+    "ffmpegMissingDetail": "Open the install screen, install it, and then try the conversion again.",
+    "ffmpegInstallButton": "Open Install Screen",
+    "cancelButton": "Cancel"
+  }
+}

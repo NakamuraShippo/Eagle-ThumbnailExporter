@@ -1,0 +1,134 @@
+{
+  "manifest": {
+    "app": {
+      "name": "Thumbnail Exporter"
+    }
+  },
+  "app": {
+    "title": "Thumbnail Exporter",
+    "eyebrow": "Eagle Batch Utility",
+    "hero": "選択した画像をまとめて縮小し、形式変換と圧縮を行って外部フォルダへ書き出します。"
+  },
+  "metrics": {
+    "selected": "選択件数",
+    "success": "成功",
+    "error": "失敗"
+  },
+  "banner": {
+    "selectImages": "Eagle で画像を選択してから、このプラグインを開いてください。"
+  },
+  "settings": {
+    "title": "出力設定",
+    "groupBasics": "出力形式",
+    "groupBasicsHint": "書き出すサムネイルの出力形式を設定します。",
+    "groupResize": "サイズと圧縮",
+    "groupResizeHint": "選択した形式に対する縮小比率と圧縮設定を調整します。",
+    "groupExport": "保存とリネーム",
+    "groupExportHint": "変換後ファイルの保存先と、出力ファイル名に付ける接頭辞または接尾辞を設定します。",
+    "language": "表示言語",
+    "languageHint": "自動で Eagle の UI 言語に従います。",
+    "languageAuto": "自動 (Eagle)",
+    "outputTargetType": "保存先種別",
+    "outputTargetFilesystem": "外部フォルダ",
+    "outputTargetEagleFolder": "Eagle 内フォルダ",
+    "outputFormat": "出力形式",
+    "resizeRatio": "サイズ圧縮比率",
+    "quality": "品質",
+    "qualityHint": "JPG / WEBP の出力品質です。",
+    "compressionLevel": "圧縮レベル",
+    "compressionLevelHint": "PNG の圧縮レベルです。大きいほど圧縮は強くなります。",
+    "outputDirectory": "保存先フォルダ",
+    "outputDirectoryPlaceholder": "保存先フォルダを選択してください",
+    "eagleFolder": "Eagle 内フォルダ",
+    "eagleFolderHint": "変換後の画像を、選択した Eagle 内フォルダへ取り込みます。",
+    "eagleFolderPlaceholder": "Eagle 内フォルダを選択してください",
+    "eagleFolderEmpty": "利用可能な Eagle フォルダがありません",
+    "rename": "リネーム",
+    "renameNone": "変更なし",
+    "renamePrefix": "接頭辞",
+    "renameSuffix": "接尾辞",
+    "renameText": "追加文字列",
+    "renameTextPlaceholder": "thumb_"
+  },
+  "actions": {
+    "supportCreator": "Patreonで支援",
+    "reload": "選択を再読み込み",
+    "reloadFolders": "フォルダ一覧を更新",
+    "chooseFolder": "フォルダを選択",
+    "start": "変換開始",
+    "cancel": "キャンセル"
+  },
+  "list": {
+    "title": "対象画像",
+    "subtitleEmpty": "選択された画像がここに表示されます。",
+    "subtitleCount": "{{count}} 件の画像を一括処理できます。",
+    "summaryNotStarted": "未実行",
+    "summaryReady": "準備完了",
+    "summaryNoItems": "対象なし",
+    "summaryInitializing": "初期化中",
+    "summaryRunning": "変換中",
+    "summaryPartial": "一部失敗あり",
+    "summaryCanceled": "キャンセル",
+    "summaryCompleted": "完了",
+    "summaryFailed": "失敗"
+  },
+  "table": {
+    "image": "画像",
+    "originalFile": "元ファイル",
+    "size": "サイズ",
+    "plannedOutput": "出力予定",
+    "status": "状態"
+  },
+  "empty": {
+    "noSelection": "Eagle 上で画像を選択すると、ここに一覧が表示されます。"
+  },
+  "status": {
+    "pending": "待機中",
+    "running": "変換中",
+    "success": "完了",
+    "error": "失敗",
+    "canceled": "キャンセル",
+    "canceling": "キャンセル中"
+  },
+  "messages": {
+    "pluginInitWait": "プラグイン初期化を待っています。",
+    "pluginInitInProgress": "プラグイン初期化中です。少し待ってから再試行してください。",
+    "selectionLoaded": "{{count}} 件の画像を読み込みました。",
+    "eagleFoldersLoaded": "{{count}} 件の Eagle フォルダを読み込みました。",
+    "noEagleFolders": "このライブラリで利用できる Eagle フォルダがありません。",
+    "loadItemsFailed": "画像一覧の取得に失敗しました: {{message}}",
+    "loadFoldersFailed": "Eagle フォルダ一覧の取得に失敗しました: {{message}}",
+    "outputDirectoryUpdated": "保存先フォルダを更新しました。",
+    "browseFailed": "保存先フォルダの選択に失敗しました: {{message}}",
+    "checkInputs": "入力内容を確認してください。",
+    "ffmpegInstallRequired": "FFmpeg Dependency Plugin の導入後に再実行してください。",
+    "batchStarted": "一括変換を開始しました。",
+    "batchCompleted": "全 {{count}} 件の変換が完了しました。",
+    "batchCompletedWithIssues": "処理完了: 成功 {{success}} 件 / 失敗 {{error}} 件 / キャンセル {{canceled}} 件",
+    "batchCanceled": "処理を停止しました: 成功 {{success}} 件 / キャンセル {{canceled}} 件",
+    "batchStartFailed": "一括変換の開始に失敗しました: {{message}}",
+    "importedToFolder": "{{folder}} に取り込みました",
+    "canceling": "変換をキャンセルしています。",
+    "runtimeUnavailable": "Eagle ランタイム外では一部機能を利用できません。"
+  },
+  "validation": {
+    "selectItems": "Eagle 上で画像を 1 件以上選択してください。",
+    "chooseOutputDirectory": "保存先フォルダを選択してください。",
+    "chooseEagleFolder": "Eagle 内フォルダを選択してください。",
+    "resizeRatioRange": "サイズ圧縮比率は 10% から 100% の範囲で指定してください。",
+    "pngCompressionRange": "PNG 圧縮レベルは 0 から 9 の範囲で指定してください。",
+    "qualityRange": "品質は 1 から 100 の範囲で指定してください。",
+    "renameTextLength": "リネーム文字列は 80 文字以内にしてください。",
+    "outputDirectoryAccess": "保存先フォルダにアクセスできません。存在するフォルダを選択してください。",
+    "eagleFolderUnavailable": "選択した Eagle フォルダは利用できなくなりました。別のフォルダを選択してください。"
+  },
+  "dialogs": {
+    "chooseOutputTitle": "保存先フォルダを選択",
+    "chooseOutputButton": "このフォルダを使う",
+    "ffmpegMissingTitle": "FFmpeg 依存プラグインが必要です",
+    "ffmpegMissingMessage": "画像変換を行うために FFmpeg Dependency Plugin が必要です。",
+    "ffmpegMissingDetail": "インストール画面を開いて導入した後、もう一度変換を実行してください。",
+    "ffmpegInstallButton": "インストール画面を開く",
+    "cancelButton": "キャンセル"
+  }
+}

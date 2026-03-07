@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thumbnail Exporter</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="app.eyebrow">Eagle Batch Utility</p>
+          <h1 data-i18n="manifest.app.name">Thumbnail Exporter</h1>
+          <div class="hero-actions">
+            <button class="support-button" id="support-button" type="button" data-i18n="actions.supportCreator">
+              Support on Patreon
+            </button>
+          </div>
+          <p class="hero-text" data-i18n="app.hero">
+            Batch resize selected images, convert formats, compress them, and export them to an external folder.
+          </p>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <span class="metric-label" data-i18n="metrics.selected">Selected</span>
+            <strong class="metric-value" id="selected-count">0</strong>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" data-i18n="metrics.success">Success</span>
+            <strong class="metric-value" id="success-count">0</strong>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" data-i18n="metrics.error">Failed</span>
+            <strong class="metric-value" id="error-count">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="banner" id="banner" data-tone="info" data-i18n="banner.selectImages">
+        Please select images in Eagle and then open this plugin.
+      </section>
+
+      <main class="workspace">
+        <section class="settings-panel">
+          <div class="panel-head">
+            <h2 data-i18n="settings.title">Output Settings</h2>
+            <div class="panel-head-tools">
+              <label class="toolbar-field">
+                <span class="toolbar-label" data-i18n="settings.language">Language</span>
+                <select id="language-select"></select>
+              </label>
+              <button class="secondary-button" id="reload-button" type="button" data-i18n="actions.reload">
+                Reload Selection
+              </button>
+            </div>
+          </div>
+
+          <div class="settings-stack">
+            <section class="setting-card">
+              <div class="setting-card-head">
+                <span class="setting-card-step">01</span>
+                <div>
+                  <h3 class="setting-card-title" data-i18n="settings.groupBasics">Output Format</h3>
+                  <p class="setting-card-copy" data-i18n="settings.groupBasicsHint">
+                    Choose the output format for the exported thumbnails.
+                  </p>
+                </div>
+              </div>
+              <div class="setting-card-grid single-column">
+                <label class="field">
+                  <span class="field-label" data-i18n="settings.outputFormat">Output Format</span>
+                  <select id="output-format">
+                    <option value="jpg">JPG</option>
+                    <option value="png">PNG</option>
+                    <option value="webp">WEBP</option>
+                  </select>
+                </label>
+              </div>
+            </section>
+
+            <section class="setting-card">
+              <div class="setting-card-head">
+                <span class="setting-card-step">02</span>
+                <div>
+                  <h3 class="setting-card-title" data-i18n="settings.groupResize">Size and Compression</h3>
+                  <p class="setting-card-copy" data-i18n="settings.groupResizeHint">
+                    Adjust the resize ratio and output compression for the selected format.
+                  </p>
+                </div>
+              </div>
+              <div class="setting-card-grid single-column">
+                <div class="field">
+                  <span class="field-label" data-i18n="settings.resizeRatio">Resize Ratio</span>
+                  <div class="split-input">
+                    <input id="resize-ratio-range" type="range" min="10" max="100" step="5" value="50" />
+                    <div class="number-with-suffix">
+                      <input id="resize-ratio-number" type="number" min="10" max="100" step="5" value="50" />
+                      <span>%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <span class="field-label" id="compression-label">Quality</span>
+                  <div class="split-input">
+                    <input id="compression-range" type="range" min="1" max="100" step="1" value="82" />
+                    <div class="number-with-suffix">
+                      <input id="compression-number" type="number" min="1" max="100" step="1" value="82" />
+                      <span id="compression-suffix">%</span>
+                    </div>
+                  </div>
+                  <small class="field-hint" id="compression-hint">Output quality for JPG / WEBP.</small>
+                </div>
+              </div>
+            </section>
+
+            <section class="setting-card">
+              <div class="setting-card-head">
+                <span class="setting-card-step">03</span>
+                <div>
+                  <h3 class="setting-card-title" data-i18n="settings.groupExport">Export and Rename</h3>
+                  <p class="setting-card-copy" data-i18n="settings.groupExportHint">
+                    Choose where converted files should go and control the prefix or suffix for exported files.
+                  </p>
+                </div>
+              </div>
+              <div class="setting-card-grid">
+                <label class="field">
+                  <span class="field-label" data-i18n="settings.outputTargetType">Save Destination</span>
+                  <select id="output-target-type">
+                    <option value="filesystem" data-i18n="settings.outputTargetFilesystem">External Folder</option>
+                    <option value="eagle-folder" data-i18n="settings.outputTargetEagleFolder">Eagle Folder</option>
+                  </select>
+                </label>
+
+                <div class="field full-span destination-panel" id="eagle-folder-panel">
+                  <span class="field-label" data-i18n="settings.eagleFolder">Eagle Folder</span>
+                  <div class="directory-picker compact-picker">
+                    <select id="eagle-folder-select"></select>
+                    <button
+                      class="secondary-button"
+                      id="reload-folders-button"
+                      type="button"
+                      data-i18n="actions.reloadFolders"
+                    >
+                      Refresh Folders
+                    </button>
+                  </div>
+                  <small class="field-hint" data-i18n="settings.eagleFolderHint">
+                    Converted images will be imported into the selected Eagle folder.
+                  </small>
+                </div>
+
+                <div class="field full-span destination-panel" id="filesystem-target-panel">
+                  <span class="field-label" data-i18n="settings.outputDirectory">Output Folder</span>
+                  <div class="directory-picker">
+                    <input
+                      id="output-directory"
+                      type="text"
+                      placeholder="Choose an output folder"
+                      data-i18n-placeholder="settings.outputDirectoryPlaceholder"
+                      readonly
+                    />
+                    <button class="secondary-button" id="browse-button" type="button" data-i18n="actions.chooseFolder">
+                      Choose Folder
+                    </button>
+                  </div>
+                </div>
+
+                <label class="field">
+                  <span class="field-label" data-i18n="settings.rename">Rename</span>
+                  <select id="rename-mode">
+                    <option value="none" data-i18n="settings.renameNone">No Change</option>
+                    <option value="prefix" data-i18n="settings.renamePrefix">Prefix</option>
+                    <option value="suffix" data-i18n="settings.renameSuffix">Suffix</option>
+                  </select>
+                </label>
+
+                <label class="field">
+                  <span class="field-label" data-i18n="settings.renameText">Added Text</span>
+                  <input
+                    id="rename-text"
+                    type="text"
+                    maxlength="80"
+                    placeholder="thumb_"
+                    data-i18n-placeholder="settings.renameTextPlaceholder"
+                  />
+                </label>
+              </div>
+            </section>
+          </div>
+
+          <div class="validation-list" id="validation-list"></div>
+
+          <div class="panel-actions">
+            <button class="primary-button" id="start-button" type="button" data-i18n="actions.start">
+              Start
+            </button>
+            <button class="ghost-button" id="cancel-button" type="button" disabled data-i18n="actions.cancel">
+              Cancel
+            </button>
+          </div>
+
+          <div class="progress-panel">
+            <div class="progress-meta">
+              <span id="progress-label">Idle</span>
+              <span id="progress-detail">0 / 0</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="list-panel">
+          <div class="panel-head">
+            <div>
+              <h2 data-i18n="list.title">Target Images</h2>
+              <p class="panel-subtitle" id="list-subtitle">Selected images will appear here.</p>
+            </div>
+            <div class="summary-pill" id="summary-pill">Not Started</div>
+          </div>
+
+          <div class="table-shell">
+            <table>
+              <thead>
+                <tr>
+                  <th data-i18n="table.image">Image</th>
+                  <th data-i18n="table.originalFile">Original File</th>
+                  <th data-i18n="table.size">Size</th>
+                  <th data-i18n="table.plannedOutput">Planned Output</th>
+                  <th data-i18n="table.status">Status</th>
+                </tr>
+              </thead>
+              <tbody id="item-list"></tbody>
+            </table>
+            <div class="empty-state" id="empty-state" data-i18n="empty.noSelection">
+              Select images in Eagle to see them here.
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/state.js"></script>
+    <script src="js/i18n-service.js"></script>
+    <script src="js/settings-service.js"></script>
+    <script src="js/naming-service.js"></script>
+    <script src="js/validation-service.js"></script>
+    <script src="js/ffmpeg-service.js"></script>
+    <script src="js/image-job-runner.js"></script>
+    <script src="js/eagle-service.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

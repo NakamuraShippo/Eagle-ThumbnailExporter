@@ -1,0 +1,134 @@
+{
+  "manifest": {
+    "app": {
+      "name": "Thumbnail Exporter"
+    }
+  },
+  "app": {
+    "title": "Thumbnail Exporter",
+    "eyebrow": "Eagle Batch Utility",
+    "hero": "將所選圖片批次縮小、轉換格式並壓縮後輸出到外部資料夾。"
+  },
+  "metrics": {
+    "selected": "已選數量",
+    "success": "成功",
+    "error": "失敗"
+  },
+  "banner": {
+    "selectImages": "請先在 Eagle 中選取圖片，然後再開啟此插件。"
+  },
+  "settings": {
+    "title": "輸出設定",
+    "groupBasics": "輸出格式",
+    "groupBasicsHint": "設定匯出縮圖的輸出格式。",
+    "groupResize": "尺寸與壓縮",
+    "groupResizeHint": "調整所選格式的縮放比例與輸出壓縮設定。",
+    "groupExport": "輸出與重新命名",
+    "groupExportHint": "選擇轉換後檔案的保存位置，並設定匯出檔名的前綴或後綴。",
+    "language": "介面語言",
+    "languageHint": "自動模式會跟隨 Eagle 的介面語言。",
+    "languageAuto": "自動 (Eagle)",
+    "outputTargetType": "保存目標",
+    "outputTargetFilesystem": "外部資料夾",
+    "outputTargetEagleFolder": "Eagle 資料夾",
+    "outputFormat": "輸出格式",
+    "resizeRatio": "縮放比例",
+    "quality": "品質",
+    "qualityHint": "JPG / WEBP 的輸出品質。",
+    "compressionLevel": "壓縮等級",
+    "compressionLevelHint": "PNG 的壓縮等級，數值越大壓縮越強。",
+    "outputDirectory": "輸出資料夾",
+    "outputDirectoryPlaceholder": "請選擇輸出資料夾",
+    "eagleFolder": "Eagle 資料夾",
+    "eagleFolderHint": "轉換後的圖片會匯入到所選的 Eagle 資料夾。",
+    "eagleFolderPlaceholder": "請選擇 Eagle 資料夾",
+    "eagleFolderEmpty": "沒有可用的 Eagle 資料夾",
+    "rename": "重新命名",
+    "renameNone": "不變更",
+    "renamePrefix": "前綴",
+    "renameSuffix": "後綴",
+    "renameText": "附加文字",
+    "renameTextPlaceholder": "thumb_"
+  },
+  "actions": {
+    "supportCreator": "在 Patreon 上支持我",
+    "reload": "重新讀取選取內容",
+    "reloadFolders": "重新整理資料夾",
+    "chooseFolder": "選擇資料夾",
+    "start": "開始轉換",
+    "cancel": "取消"
+  },
+  "list": {
+    "title": "目標圖片",
+    "subtitleEmpty": "所選圖片會顯示在這裡。",
+    "subtitleCount": "共有 {{count}} 張圖片可批次處理。",
+    "summaryNotStarted": "未開始",
+    "summaryReady": "準備完成",
+    "summaryNoItems": "沒有對象",
+    "summaryInitializing": "初始化中",
+    "summaryRunning": "轉換中",
+    "summaryPartial": "部分失敗",
+    "summaryCanceled": "已取消",
+    "summaryCompleted": "已完成",
+    "summaryFailed": "失敗"
+  },
+  "table": {
+    "image": "圖片",
+    "originalFile": "原始檔案",
+    "size": "尺寸",
+    "plannedOutput": "預計輸出",
+    "status": "狀態"
+  },
+  "empty": {
+    "noSelection": "在 Eagle 中選取圖片後，這裡會顯示清單。"
+  },
+  "status": {
+    "pending": "等待中",
+    "running": "轉換中",
+    "success": "完成",
+    "error": "失敗",
+    "canceled": "已取消",
+    "canceling": "取消中"
+  },
+  "messages": {
+    "pluginInitWait": "正在等待插件初始化。",
+    "pluginInitInProgress": "插件仍在初始化中，請稍後再試。",
+    "selectionLoaded": "已載入 {{count}} 張圖片。",
+    "eagleFoldersLoaded": "已載入 {{count}} 個 Eagle 資料夾。",
+    "noEagleFolders": "此資料庫中沒有可用的 Eagle 資料夾。",
+    "loadItemsFailed": "讀取所選圖片失敗: {{message}}",
+    "loadFoldersFailed": "讀取 Eagle 資料夾失敗: {{message}}",
+    "outputDirectoryUpdated": "已更新輸出資料夾。",
+    "browseFailed": "選擇輸出資料夾失敗: {{message}}",
+    "checkInputs": "請檢查輸入內容。",
+    "ffmpegInstallRequired": "請先安裝 FFmpeg Dependency Plugin 後再試。",
+    "batchStarted": "已開始批次轉換。",
+    "batchCompleted": "已完成 {{count}} 張圖片的轉換。",
+    "batchCompletedWithIssues": "處理完成: 成功 {{success}} / 失敗 {{error}} / 取消 {{canceled}}",
+    "batchCanceled": "處理已停止: 成功 {{success}} / 取消 {{canceled}}",
+    "batchStartFailed": "啟動批次轉換失敗: {{message}}",
+    "importedToFolder": "已匯入到 {{folder}}",
+    "canceling": "正在取消轉換。",
+    "runtimeUnavailable": "在 Eagle 執行環境之外，部分功能無法使用。"
+  },
+  "validation": {
+    "selectItems": "請至少在 Eagle 中選取一張圖片。",
+    "chooseOutputDirectory": "請選擇輸出資料夾。",
+    "chooseEagleFolder": "請選擇 Eagle 資料夾。",
+    "resizeRatioRange": "縮放比例必須介於 10% 到 100% 之間。",
+    "pngCompressionRange": "PNG 壓縮等級必須介於 0 到 9 之間。",
+    "qualityRange": "品質必須介於 1 到 100 之間。",
+    "renameTextLength": "重新命名文字必須在 80 個字元以內。",
+    "outputDirectoryAccess": "無法存取輸出資料夾。請選擇已存在的資料夾。",
+    "eagleFolderUnavailable": "所選的 Eagle 資料夾已不可用。請選擇其他資料夾。"
+  },
+  "dialogs": {
+    "chooseOutputTitle": "選擇輸出資料夾",
+    "chooseOutputButton": "使用此資料夾",
+    "ffmpegMissingTitle": "需要 FFmpeg 依賴插件",
+    "ffmpegMissingMessage": "進行圖片轉換需要 FFmpeg Dependency Plugin。",
+    "ffmpegMissingDetail": "請開啟安裝畫面並安裝後，再次執行轉換。",
+    "ffmpegInstallButton": "開啟安裝畫面",
+    "cancelButton": "取消"
+  }
+}

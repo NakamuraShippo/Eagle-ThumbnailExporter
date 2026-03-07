@@ -1,0 +1,134 @@
+{
+  "manifest": {
+    "app": {
+      "name": "Thumbnail Exporter"
+    }
+  },
+  "app": {
+    "title": "Thumbnail Exporter",
+    "eyebrow": "Eagle Batch Utility",
+    "hero": "将所选图片批量缩小、转换格式并压缩后导出到外部文件夹。"
+  },
+  "metrics": {
+    "selected": "已选数量",
+    "success": "成功",
+    "error": "失败"
+  },
+  "banner": {
+    "selectImages": "请先在 Eagle 中选择图片，然后再打开此插件。"
+  },
+  "settings": {
+    "title": "输出设置",
+    "groupBasics": "输出格式",
+    "groupBasicsHint": "设置导出缩略图的输出格式。",
+    "groupResize": "尺寸与压缩",
+    "groupResizeHint": "调整所选格式的缩放比例和输出压缩设置。",
+    "groupExport": "导出与重命名",
+    "groupExportHint": "选择转换后文件的保存位置，并设置导出文件名的前缀或后缀。",
+    "language": "界面语言",
+    "languageHint": "自动模式会跟随 Eagle 的界面语言。",
+    "languageAuto": "自动 (Eagle)",
+    "outputTargetType": "保存目标",
+    "outputTargetFilesystem": "外部文件夹",
+    "outputTargetEagleFolder": "Eagle 文件夹",
+    "outputFormat": "输出格式",
+    "resizeRatio": "缩放比例",
+    "quality": "质量",
+    "qualityHint": "JPG / WEBP 的输出质量。",
+    "compressionLevel": "压缩级别",
+    "compressionLevelHint": "PNG 的压缩级别，数值越大压缩越强。",
+    "outputDirectory": "输出文件夹",
+    "outputDirectoryPlaceholder": "请选择输出文件夹",
+    "eagleFolder": "Eagle 文件夹",
+    "eagleFolderHint": "转换后的图片将导入到所选的 Eagle 文件夹中。",
+    "eagleFolderPlaceholder": "请选择 Eagle 文件夹",
+    "eagleFolderEmpty": "没有可用的 Eagle 文件夹",
+    "rename": "重命名",
+    "renameNone": "不修改",
+    "renamePrefix": "前缀",
+    "renameSuffix": "后缀",
+    "renameText": "附加文本",
+    "renameTextPlaceholder": "thumb_"
+  },
+  "actions": {
+    "supportCreator": "在 Patreon 上支持我",
+    "reload": "重新读取选择",
+    "reloadFolders": "刷新文件夹",
+    "chooseFolder": "选择文件夹",
+    "start": "开始转换",
+    "cancel": "取消"
+  },
+  "list": {
+    "title": "目标图片",
+    "subtitleEmpty": "所选图片会显示在这里。",
+    "subtitleCount": "已有 {{count}} 张图片可批量处理。",
+    "summaryNotStarted": "未开始",
+    "summaryReady": "准备完成",
+    "summaryNoItems": "没有对象",
+    "summaryInitializing": "初始化中",
+    "summaryRunning": "转换中",
+    "summaryPartial": "部分失败",
+    "summaryCanceled": "已取消",
+    "summaryCompleted": "已完成",
+    "summaryFailed": "失败"
+  },
+  "table": {
+    "image": "图片",
+    "originalFile": "原文件",
+    "size": "尺寸",
+    "plannedOutput": "预计输出",
+    "status": "状态"
+  },
+  "empty": {
+    "noSelection": "在 Eagle 中选择图片后，这里会显示列表。"
+  },
+  "status": {
+    "pending": "等待中",
+    "running": "转换中",
+    "success": "完成",
+    "error": "失败",
+    "canceled": "已取消",
+    "canceling": "取消中"
+  },
+  "messages": {
+    "pluginInitWait": "正在等待插件初始化。",
+    "pluginInitInProgress": "插件仍在初始化中，请稍后再试。",
+    "selectionLoaded": "已载入 {{count}} 张图片。",
+    "eagleFoldersLoaded": "已载入 {{count}} 个 Eagle 文件夹。",
+    "noEagleFolders": "此资源库中没有可用的 Eagle 文件夹。",
+    "loadItemsFailed": "读取所选图片失败: {{message}}",
+    "loadFoldersFailed": "读取 Eagle 文件夹失败: {{message}}",
+    "outputDirectoryUpdated": "已更新输出文件夹。",
+    "browseFailed": "选择输出文件夹失败: {{message}}",
+    "checkInputs": "请检查输入内容。",
+    "ffmpegInstallRequired": "请先安装 FFmpeg Dependency Plugin 后再试。",
+    "batchStarted": "已开始批量转换。",
+    "batchCompleted": "已完成 {{count}} 张图片的转换。",
+    "batchCompletedWithIssues": "处理完成: 成功 {{success}} / 失败 {{error}} / 取消 {{canceled}}",
+    "batchCanceled": "处理已停止: 成功 {{success}} / 取消 {{canceled}}",
+    "batchStartFailed": "启动批量转换失败: {{message}}",
+    "importedToFolder": "已导入到 {{folder}}",
+    "canceling": "正在取消转换。",
+    "runtimeUnavailable": "在 Eagle 运行时之外，部分功能不可用。"
+  },
+  "validation": {
+    "selectItems": "请至少在 Eagle 中选择一张图片。",
+    "chooseOutputDirectory": "请选择输出文件夹。",
+    "chooseEagleFolder": "请选择 Eagle 文件夹。",
+    "resizeRatioRange": "缩放比例必须在 10% 到 100% 之间。",
+    "pngCompressionRange": "PNG 压缩级别必须在 0 到 9 之间。",
+    "qualityRange": "质量必须在 1 到 100 之间。",
+    "renameTextLength": "重命名文本必须在 80 个字符以内。",
+    "outputDirectoryAccess": "无法访问输出文件夹。请选择已存在的文件夹。",
+    "eagleFolderUnavailable": "所选 Eagle 文件夹已不可用。请选择其他文件夹。"
+  },
+  "dialogs": {
+    "chooseOutputTitle": "选择输出文件夹",
+    "chooseOutputButton": "使用此文件夹",
+    "ffmpegMissingTitle": "需要 FFmpeg 依赖插件",
+    "ffmpegMissingMessage": "进行图片转换需要 FFmpeg Dependency Plugin。",
+    "ffmpegMissingDetail": "请打开安装界面并安装后，再次执行转换。",
+    "ffmpegInstallButton": "打开安装界面",
+    "cancelButton": "取消"
+  }
+}

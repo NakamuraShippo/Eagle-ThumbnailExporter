@@ -1,0 +1,134 @@
+{
+  "manifest": {
+    "app": {
+      "name": "Thumbnail Exporter"
+    }
+  },
+  "app": {
+    "title": "Thumbnail Exporter",
+    "eyebrow": "Eagle Batch Utility",
+    "hero": "Reduce por lotes las imágenes seleccionadas, convierte formatos, las comprime y las exporta a una carpeta externa."
+  },
+  "metrics": {
+    "selected": "Seleccionadas",
+    "success": "Éxito",
+    "error": "Error"
+  },
+  "banner": {
+    "selectImages": "Selecciona imágenes en Eagle y luego abre este complemento."
+  },
+  "settings": {
+    "title": "Configuración de salida",
+    "groupBasics": "Formato de salida",
+    "groupBasicsHint": "Elige el formato de salida de las miniaturas exportadas.",
+    "groupResize": "Tamaño y compresión",
+    "groupResizeHint": "Ajusta la proporción de escala y la compresión de salida para el formato seleccionado.",
+    "groupExport": "Exportación y renombrado",
+    "groupExportHint": "Elige el destino de los archivos convertidos y controla el prefijo o sufijo de los archivos exportados.",
+    "language": "Idioma",
+    "languageHint": "Automático sigue el idioma de la interfaz de Eagle.",
+    "languageAuto": "Automático (Eagle)",
+    "outputTargetType": "Destino de guardado",
+    "outputTargetFilesystem": "Carpeta externa",
+    "outputTargetEagleFolder": "Carpeta de Eagle",
+    "outputFormat": "Formato de salida",
+    "resizeRatio": "Proporción de escala",
+    "quality": "Calidad",
+    "qualityHint": "Calidad de salida para JPG / WEBP.",
+    "compressionLevel": "Nivel de compresión",
+    "compressionLevelHint": "Nivel de compresión para PNG. Cuanto mayor sea el valor, mayor será la compresión.",
+    "outputDirectory": "Carpeta de salida",
+    "outputDirectoryPlaceholder": "Selecciona una carpeta de salida",
+    "eagleFolder": "Carpeta de Eagle",
+    "eagleFolderHint": "Las imágenes convertidas se importarán en la carpeta de Eagle seleccionada.",
+    "eagleFolderPlaceholder": "Selecciona una carpeta de Eagle",
+    "eagleFolderEmpty": "No hay carpetas de Eagle disponibles",
+    "rename": "Renombrar",
+    "renameNone": "Sin cambios",
+    "renamePrefix": "Prefijo",
+    "renameSuffix": "Sufijo",
+    "renameText": "Texto adicional",
+    "renameTextPlaceholder": "thumb_"
+  },
+  "actions": {
+    "supportCreator": "Apoyar en Patreon",
+    "reload": "Recargar selección",
+    "reloadFolders": "Actualizar carpetas",
+    "chooseFolder": "Elegir carpeta",
+    "start": "Iniciar conversión",
+    "cancel": "Cancelar"
+  },
+  "list": {
+    "title": "Imágenes de destino",
+    "subtitleEmpty": "Las imágenes seleccionadas aparecerán aquí.",
+    "subtitleCount": "{{count}} imágenes están listas para el procesamiento por lotes.",
+    "summaryNotStarted": "Sin iniciar",
+    "summaryReady": "Listo",
+    "summaryNoItems": "Sin elementos",
+    "summaryInitializing": "Inicializando",
+    "summaryRunning": "Convirtiendo",
+    "summaryPartial": "Completado con errores",
+    "summaryCanceled": "Cancelado",
+    "summaryCompleted": "Completado",
+    "summaryFailed": "Falló"
+  },
+  "table": {
+    "image": "Imagen",
+    "originalFile": "Archivo original",
+    "size": "Tamaño",
+    "plannedOutput": "Salida prevista",
+    "status": "Estado"
+  },
+  "empty": {
+    "noSelection": "Selecciona imágenes en Eagle para verlas aquí."
+  },
+  "status": {
+    "pending": "Pendiente",
+    "running": "En curso",
+    "success": "Hecho",
+    "error": "Error",
+    "canceled": "Cancelado",
+    "canceling": "Cancelando"
+  },
+  "messages": {
+    "pluginInitWait": "Esperando la inicialización del complemento.",
+    "pluginInitInProgress": "El complemento todavía se está inicializando. Vuelve a intentarlo en un momento.",
+    "selectionLoaded": "Se cargaron {{count}} imágenes.",
+    "eagleFoldersLoaded": "Se cargaron {{count}} carpetas de Eagle.",
+    "noEagleFolders": "No hay carpetas de Eagle disponibles en esta biblioteca.",
+    "loadItemsFailed": "No se pudieron cargar las imágenes seleccionadas: {{message}}",
+    "loadFoldersFailed": "No se pudieron cargar las carpetas de Eagle: {{message}}",
+    "outputDirectoryUpdated": "Se actualizó la carpeta de salida.",
+    "browseFailed": "No se pudo elegir la carpeta de salida: {{message}}",
+    "checkInputs": "Revisa los valores introducidos.",
+    "ffmpegInstallRequired": "Instala el FFmpeg Dependency Plugin y vuelve a intentarlo.",
+    "batchStarted": "Conversión por lotes iniciada.",
+    "batchCompleted": "Se completó la conversión de {{count}} imágenes.",
+    "batchCompletedWithIssues": "Completado: {{success}} correctas / {{error}} fallidas / {{canceled}} canceladas",
+    "batchCanceled": "Detenido: {{success}} correctas / {{canceled}} canceladas",
+    "batchStartFailed": "No se pudo iniciar la conversión por lotes: {{message}}",
+    "importedToFolder": "Importado en {{folder}}",
+    "canceling": "Cancelando la conversión.",
+    "runtimeUnavailable": "Algunas funciones no están disponibles fuera del entorno de Eagle."
+  },
+  "validation": {
+    "selectItems": "Selecciona al menos una imagen en Eagle.",
+    "chooseOutputDirectory": "Selecciona una carpeta de salida.",
+    "chooseEagleFolder": "Selecciona una carpeta de Eagle.",
+    "resizeRatioRange": "La proporción de escala debe estar entre el 10% y el 100%.",
+    "pngCompressionRange": "El nivel de compresión PNG debe estar entre 0 y 9.",
+    "qualityRange": "La calidad debe estar entre 1 y 100.",
+    "renameTextLength": "El texto de renombrado debe tener 80 caracteres o menos.",
+    "outputDirectoryAccess": "No se puede acceder a la carpeta de salida. Selecciona una carpeta existente.",
+    "eagleFolderUnavailable": "La carpeta de Eagle seleccionada ya no está disponible. Selecciona otra carpeta."
+  },
+  "dialogs": {
+    "chooseOutputTitle": "Elegir carpeta de salida",
+    "chooseOutputButton": "Usar esta carpeta",
+    "ffmpegMissingTitle": "Se requiere la dependencia FFmpeg",
+    "ffmpegMissingMessage": "Se requiere FFmpeg Dependency Plugin para la conversión de imágenes.",
+    "ffmpegMissingDetail": "Abre la pantalla de instalación, instálalo y vuelve a intentar la conversión.",
+    "ffmpegInstallButton": "Abrir pantalla de instalación",
+    "cancelButton": "Cancelar"
+  }
+}

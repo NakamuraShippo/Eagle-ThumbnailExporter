@@ -1,0 +1,134 @@
+{
+  "manifest": {
+    "app": {
+      "name": "Thumbnail Exporter"
+    }
+  },
+  "app": {
+    "title": "Thumbnail Exporter",
+    "eyebrow": "Eagle Batch Utility",
+    "hero": "Пакетно уменьшает выбранные изображения, конвертирует форматы, сжимает их и экспортирует во внешнюю папку."
+  },
+  "metrics": {
+    "selected": "Выбрано",
+    "success": "Успешно",
+    "error": "Ошибка"
+  },
+  "banner": {
+    "selectImages": "Сначала выберите изображения в Eagle, затем откройте этот плагин."
+  },
+  "settings": {
+    "title": "Параметры вывода",
+    "groupBasics": "Формат вывода",
+    "groupBasicsHint": "Выберите формат вывода для экспортируемых миниатюр.",
+    "groupResize": "Размер и сжатие",
+    "groupResizeHint": "Настройте коэффициент уменьшения и сжатие для выбранного формата.",
+    "groupExport": "Экспорт и переименование",
+    "groupExportHint": "Выберите место назначения для преобразованных файлов и задайте префикс или суффикс для экспортируемых файлов.",
+    "language": "Язык интерфейса",
+    "languageHint": "Авто использует язык интерфейса Eagle.",
+    "languageAuto": "Авто (Eagle)",
+    "outputTargetType": "Место сохранения",
+    "outputTargetFilesystem": "Внешняя папка",
+    "outputTargetEagleFolder": "Папка Eagle",
+    "outputFormat": "Формат вывода",
+    "resizeRatio": "Коэффициент уменьшения",
+    "quality": "Качество",
+    "qualityHint": "Качество вывода для JPG / WEBP.",
+    "compressionLevel": "Уровень сжатия",
+    "compressionLevelHint": "Уровень сжатия PNG. Чем выше значение, тем сильнее сжатие.",
+    "outputDirectory": "Папка вывода",
+    "outputDirectoryPlaceholder": "Выберите папку вывода",
+    "eagleFolder": "Папка Eagle",
+    "eagleFolderHint": "Преобразованные изображения будут импортированы в выбранную папку Eagle.",
+    "eagleFolderPlaceholder": "Выберите папку Eagle",
+    "eagleFolderEmpty": "Нет доступных папок Eagle",
+    "rename": "Переименование",
+    "renameNone": "Без изменений",
+    "renamePrefix": "Префикс",
+    "renameSuffix": "Суффикс",
+    "renameText": "Добавляемый текст",
+    "renameTextPlaceholder": "thumb_"
+  },
+  "actions": {
+    "supportCreator": "Поддержать на Patreon",
+    "reload": "Обновить выбор",
+    "reloadFolders": "Обновить папки",
+    "chooseFolder": "Выбрать папку",
+    "start": "Начать конвертацию",
+    "cancel": "Отмена"
+  },
+  "list": {
+    "title": "Целевые изображения",
+    "subtitleEmpty": "Выбранные изображения будут показаны здесь.",
+    "subtitleCount": "{{count}} изображений готово к пакетной обработке.",
+    "summaryNotStarted": "Не запускалось",
+    "summaryReady": "Готово",
+    "summaryNoItems": "Нет элементов",
+    "summaryInitializing": "Инициализация",
+    "summaryRunning": "Конвертация",
+    "summaryPartial": "Завершено с ошибками",
+    "summaryCanceled": "Отменено",
+    "summaryCompleted": "Завершено",
+    "summaryFailed": "Ошибка"
+  },
+  "table": {
+    "image": "Изображение",
+    "originalFile": "Исходный файл",
+    "size": "Размер",
+    "plannedOutput": "Планируемый вывод",
+    "status": "Статус"
+  },
+  "empty": {
+    "noSelection": "Выберите изображения в Eagle, чтобы увидеть их здесь."
+  },
+  "status": {
+    "pending": "Ожидание",
+    "running": "Выполняется",
+    "success": "Готово",
+    "error": "Ошибка",
+    "canceled": "Отменено",
+    "canceling": "Отмена"
+  },
+  "messages": {
+    "pluginInitWait": "Ожидание инициализации плагина.",
+    "pluginInitInProgress": "Плагин все еще инициализируется. Повторите попытку через минуту.",
+    "selectionLoaded": "Загружено {{count}} изображений.",
+    "eagleFoldersLoaded": "Загружено {{count}} папок Eagle.",
+    "noEagleFolders": "В этой библиотеке нет доступных папок Eagle.",
+    "loadItemsFailed": "Не удалось загрузить выбранные изображения: {{message}}",
+    "loadFoldersFailed": "Не удалось загрузить папки Eagle: {{message}}",
+    "outputDirectoryUpdated": "Папка вывода обновлена.",
+    "browseFailed": "Не удалось выбрать папку вывода: {{message}}",
+    "checkInputs": "Проверьте введенные значения.",
+    "ffmpegInstallRequired": "Установите FFmpeg Dependency Plugin и повторите попытку.",
+    "batchStarted": "Пакетная конвертация запущена.",
+    "batchCompleted": "Завершена конвертация {{count}} изображений.",
+    "batchCompletedWithIssues": "Обработка завершена: успешно {{success}} / с ошибкой {{error}} / отменено {{canceled}}",
+    "batchCanceled": "Обработка остановлена: успешно {{success}} / отменено {{canceled}}",
+    "batchStartFailed": "Не удалось запустить пакетную конвертацию: {{message}}",
+    "importedToFolder": "Импортировано в {{folder}}",
+    "canceling": "Отмена конвертации.",
+    "runtimeUnavailable": "Некоторые функции недоступны вне среды выполнения Eagle."
+  },
+  "validation": {
+    "selectItems": "Выберите хотя бы одно изображение в Eagle.",
+    "chooseOutputDirectory": "Выберите папку вывода.",
+    "chooseEagleFolder": "Выберите папку Eagle.",
+    "resizeRatioRange": "Коэффициент уменьшения должен быть от 10% до 100%.",
+    "pngCompressionRange": "Уровень сжатия PNG должен быть от 0 до 9.",
+    "qualityRange": "Качество должно быть от 1 до 100.",
+    "renameTextLength": "Текст переименования должен быть не длиннее 80 символов.",
+    "outputDirectoryAccess": "Нет доступа к папке вывода. Выберите существующую папку.",
+    "eagleFolderUnavailable": "Выбранная папка Eagle больше недоступна. Выберите другую папку."
+  },
+  "dialogs": {
+    "chooseOutputTitle": "Выберите папку вывода",
+    "chooseOutputButton": "Использовать эту папку",
+    "ffmpegMissingTitle": "Требуется зависимость FFmpeg",
+    "ffmpegMissingMessage": "Для конвертации изображений требуется FFmpeg Dependency Plugin.",
+    "ffmpegMissingDetail": "Откройте окно установки, установите его и затем повторите конвертацию.",
+    "ffmpegInstallButton": "Открыть окно установки",
+    "cancelButton": "Отмена"
+  }
+}

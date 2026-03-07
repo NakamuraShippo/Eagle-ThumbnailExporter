@@ -1,0 +1,134 @@
+{
+  "manifest": {
+    "app": {
+      "name": "Thumbnail Exporter"
+    }
+  },
+  "app": {
+    "title": "Thumbnail Exporter",
+    "eyebrow": "Eagle Batch Utility",
+    "hero": "Reduz em lote as imagens selecionadas, converte formatos, comprime e exporta tudo para uma pasta externa."
+  },
+  "metrics": {
+    "selected": "Selecionadas",
+    "success": "Sucesso",
+    "error": "Falha"
+  },
+  "banner": {
+    "selectImages": "Selecione imagens no Eagle e depois abra este plugin."
+  },
+  "settings": {
+    "title": "Configurações de saída",
+    "groupBasics": "Formato de saída",
+    "groupBasicsHint": "Escolha o formato de saída das miniaturas exportadas.",
+    "groupResize": "Tamanho e compressão",
+    "groupResizeHint": "Ajuste a proporção de redimensionamento e a compressão de saída para o formato selecionado.",
+    "groupExport": "Exportação e renomeação",
+    "groupExportHint": "Escolha o destino dos arquivos convertidos e controle o prefixo ou sufixo dos arquivos exportados.",
+    "language": "Idioma",
+    "languageHint": "Automático segue o idioma da interface do Eagle.",
+    "languageAuto": "Automático (Eagle)",
+    "outputTargetType": "Destino de salvamento",
+    "outputTargetFilesystem": "Pasta externa",
+    "outputTargetEagleFolder": "Pasta do Eagle",
+    "outputFormat": "Formato de saída",
+    "resizeRatio": "Proporção de redimensionamento",
+    "quality": "Qualidade",
+    "qualityHint": "Qualidade de saída para JPG / WEBP.",
+    "compressionLevel": "Nível de compressão",
+    "compressionLevelHint": "Nível de compressão para PNG. Quanto maior o valor, maior a compressão.",
+    "outputDirectory": "Pasta de saída",
+    "outputDirectoryPlaceholder": "Selecione uma pasta de saída",
+    "eagleFolder": "Pasta do Eagle",
+    "eagleFolderHint": "As imagens convertidas serão importadas para a pasta do Eagle selecionada.",
+    "eagleFolderPlaceholder": "Selecione uma pasta do Eagle",
+    "eagleFolderEmpty": "Não há pastas do Eagle disponíveis",
+    "rename": "Renomear",
+    "renameNone": "Sem alteração",
+    "renamePrefix": "Prefixo",
+    "renameSuffix": "Sufixo",
+    "renameText": "Texto adicional",
+    "renameTextPlaceholder": "thumb_"
+  },
+  "actions": {
+    "supportCreator": "Apoiar no Patreon",
+    "reload": "Recarregar seleção",
+    "reloadFolders": "Atualizar pastas",
+    "chooseFolder": "Escolher pasta",
+    "start": "Iniciar conversão",
+    "cancel": "Cancelar"
+  },
+  "list": {
+    "title": "Imagens de destino",
+    "subtitleEmpty": "As imagens selecionadas aparecerão aqui.",
+    "subtitleCount": "{{count}} imagens estão prontas para processamento em lote.",
+    "summaryNotStarted": "Não iniciado",
+    "summaryReady": "Pronto",
+    "summaryNoItems": "Sem itens",
+    "summaryInitializing": "Inicializando",
+    "summaryRunning": "Convertendo",
+    "summaryPartial": "Concluído com erros",
+    "summaryCanceled": "Cancelado",
+    "summaryCompleted": "Concluído",
+    "summaryFailed": "Falhou"
+  },
+  "table": {
+    "image": "Imagem",
+    "originalFile": "Arquivo original",
+    "size": "Tamanho",
+    "plannedOutput": "Saída prevista",
+    "status": "Status"
+  },
+  "empty": {
+    "noSelection": "Selecione imagens no Eagle para vê-las aqui."
+  },
+  "status": {
+    "pending": "Pendente",
+    "running": "Em andamento",
+    "success": "Concluído",
+    "error": "Erro",
+    "canceled": "Cancelado",
+    "canceling": "Cancelando"
+  },
+  "messages": {
+    "pluginInitWait": "Aguardando a inicialização do plugin.",
+    "pluginInitInProgress": "O plugin ainda está inicializando. Tente novamente em instantes.",
+    "selectionLoaded": "{{count}} imagens carregadas.",
+    "eagleFoldersLoaded": "{{count}} pastas do Eagle carregadas.",
+    "noEagleFolders": "Não há pastas do Eagle disponíveis nesta biblioteca.",
+    "loadItemsFailed": "Falha ao carregar as imagens selecionadas: {{message}}",
+    "loadFoldersFailed": "Falha ao carregar as pastas do Eagle: {{message}}",
+    "outputDirectoryUpdated": "Pasta de saída atualizada.",
+    "browseFailed": "Falha ao escolher a pasta de saída: {{message}}",
+    "checkInputs": "Revise os valores informados.",
+    "ffmpegInstallRequired": "Instale o FFmpeg Dependency Plugin e tente novamente.",
+    "batchStarted": "Conversão em lote iniciada.",
+    "batchCompleted": "{{count}} conversões de imagem concluídas.",
+    "batchCompletedWithIssues": "Concluído: {{success}} com sucesso / {{error}} com falha / {{canceled}} canceladas",
+    "batchCanceled": "Interrompido: {{success}} com sucesso / {{canceled}} canceladas",
+    "batchStartFailed": "Falha ao iniciar a conversão em lote: {{message}}",
+    "importedToFolder": "Importado para {{folder}}",
+    "canceling": "Cancelando a conversão.",
+    "runtimeUnavailable": "Alguns recursos não estão disponíveis fora do runtime do Eagle."
+  },
+  "validation": {
+    "selectItems": "Selecione pelo menos uma imagem no Eagle.",
+    "chooseOutputDirectory": "Selecione uma pasta de saída.",
+    "chooseEagleFolder": "Selecione uma pasta do Eagle.",
+    "resizeRatioRange": "A proporção de redimensionamento deve ficar entre 10% e 100%.",
+    "pngCompressionRange": "O nível de compressão PNG deve ficar entre 0 e 9.",
+    "qualityRange": "A qualidade deve ficar entre 1 e 100.",
+    "renameTextLength": "O texto de renomeação deve ter no máximo 80 caracteres.",
+    "outputDirectoryAccess": "Não foi possível acessar a pasta de saída. Escolha uma pasta existente.",
+    "eagleFolderUnavailable": "A pasta do Eagle selecionada não está mais disponível. Escolha outra pasta."
+  },
+  "dialogs": {
+    "chooseOutputTitle": "Escolher pasta de saída",
+    "chooseOutputButton": "Usar esta pasta",
+    "ffmpegMissingTitle": "Dependência FFmpeg necessária",
+    "ffmpegMissingMessage": "O FFmpeg Dependency Plugin é necessário para a conversão de imagens.",
+    "ffmpegMissingDetail": "Abra a tela de instalação, instale-o e tente novamente.",
+    "ffmpegInstallButton": "Abrir tela de instalação",
+    "cancelButton": "Cancelar"
+  }
+}
