@@ -1,4 +1,6 @@
 # Eagle-ThumbnailExporter
+<img width="1769" height="1557" alt="Eagle-Thumbnail Exporter" src="https://github.com/NakamuraShippo/Eagle-ThumbnailExporter/blob/main/img/Eagle-Thumbnail%20Exporter.png" />
+
 This is a plugin that allows you to reduce, convert, and compress multiple images selected in Eagle at once, and output them all at once to an external folder or a folder within Eagle.
 
 This plugin lets you select multiple images in Eagle and export them as reduced thumbnail images.
