@@ -33,7 +33,8 @@ Notes:
 - Image conversion requires the FFmpeg Dependency Plugin
 - This plugin does not regenerate Eagle's internal thumbnails, but rather exports reduced images as external files.
 
-  
+
+
 
 NakamuraShippo  
 Patreon  : https://www.patreon.com/cw/NakamuraShippo  
