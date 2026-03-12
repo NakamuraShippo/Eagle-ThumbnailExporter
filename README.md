@@ -39,3 +39,5 @@ Notes:
 NakamuraShippo  
 Patreon  : https://www.patreon.com/cw/NakamuraShippo  
 X        : [@nakamurashippo](https://x.com/Nakamurashippo)
+
+[![支援をお願いします](https://github.com/NakamuraShippo/Hatstand/blob/main/assets/sponsor_logo.png)](https://www.patreon.com/cw/NakamuraShippo)
