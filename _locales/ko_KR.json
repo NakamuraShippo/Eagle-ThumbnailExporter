@@ -115,7 +115,7 @@
     "selectItems": "Eagle에서 이미지를 1개 이상 선택해 주세요.",
     "chooseOutputDirectory": "출력 폴더를 선택해 주세요.",
     "chooseEagleFolder": "Eagle 폴더를 선택해 주세요.",
-    "resizeRatioRange": "축소 비율은 10%에서 100% 사이여야 합니다.",
+    "resizeRatioRange": "축소 비율은 1%에서 100% 사이여야 합니다.",
     "pngCompressionRange": "PNG 압축 레벨은 0에서 9 사이여야 합니다.",
     "qualityRange": "품질은 1에서 100 사이여야 합니다.",
     "renameTextLength": "이름 변경 문자열은 80자 이하여야 합니다.",

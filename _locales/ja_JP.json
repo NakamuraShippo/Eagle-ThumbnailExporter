@@ -115,7 +115,7 @@
     "selectItems": "Eagle 上で画像を 1 件以上選択してください。",
     "chooseOutputDirectory": "保存先フォルダを選択してください。",
     "chooseEagleFolder": "Eagle 内フォルダを選択してください。",
-    "resizeRatioRange": "サイズ圧縮比率は 10% から 100% の範囲で指定してください。",
+    "resizeRatioRange": "サイズ圧縮比率は 1% から 100% の範囲で指定してください。",
     "pngCompressionRange": "PNG 圧縮レベルは 0 から 9 の範囲で指定してください。",
     "qualityRange": "品質は 1 から 100 の範囲で指定してください。",
     "renameTextLength": "リネーム文字列は 80 文字以内にしてください。",

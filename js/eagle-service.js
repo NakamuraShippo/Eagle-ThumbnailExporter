@@ -36,7 +36,8 @@
       size: Number(rawItem.size) || 0,
       status: "pending",
       statusMessage: t("status.pending", "Pending"),
-      outputFileName: ""
+      outputFileName: "",
+      outputFileSize: 0
     };
   }
 

@@ -576,14 +576,31 @@ thead th:nth-child(5) {
 }
 
 .file-meta,
-.output-name,
 .size-stack,
 .status-text {
   font-size: 12px;
   color: var(--ink-muted);
 }
 
-.output-name,
+.output-stack {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.output-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.output-meta {
+  font-size: 12px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
 .status-text {
   line-height: 1.5;
 }

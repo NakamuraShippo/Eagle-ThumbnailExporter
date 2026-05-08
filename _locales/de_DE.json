@@ -115,7 +115,7 @@
     "selectItems": "Bitte wählen Sie mindestens ein Bild in Eagle aus.",
     "chooseOutputDirectory": "Bitte wählen Sie einen Ausgabeordner.",
     "chooseEagleFolder": "Bitte wählen Sie einen Eagle-Ordner.",
-    "resizeRatioRange": "Der Skalierungsfaktor muss zwischen 10% und 100% liegen.",
+    "resizeRatioRange": "Der Skalierungsfaktor muss zwischen 1% und 100% liegen.",
     "pngCompressionRange": "Die PNG-Komprimierungsstufe muss zwischen 0 und 9 liegen.",
     "qualityRange": "Die Qualität muss zwischen 1 und 100 liegen.",
     "renameTextLength": "Der Umbenennungstext darf höchstens 80 Zeichen lang sein.",

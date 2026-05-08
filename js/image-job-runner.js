@@ -34,6 +34,15 @@
     }
   }
 
+  async function getFileSize(fs, filePath) {
+    try {
+      const stats = await fs.stat(filePath);
+      return Number(stats.size) || 0;
+    } catch (error) {
+      return 0;
+    }
+  }
+
   async function runBatch(options) {
     const nodeRequire = getNodeRequire();
     if (!nodeRequire) {
@@ -80,7 +89,8 @@
         options.onItemUpdate(item.id, {
           status: "running",
           statusMessage: t("status.running", "Running"),
-          outputFileName: outputTarget.fileName
+          outputFileName: outputTarget.fileName,
+          outputFileSize: 0
         });
 
         const task = ns.ffmpegService.createConversionTask({
@@ -98,6 +108,7 @@
         activeTasks.add(activeRecord);
 
         await task.promise;
+        const outputFileSize = await getFileSize(fs, outputTarget.filePath);
 
         if (isEagleFolderTarget) {
           await ns.eagleService.importFileToFolder(outputTarget.filePath, options.eagleFolder.id, {
@@ -108,14 +119,16 @@
           options.onItemUpdate(item.id, {
             status: "success",
             statusMessage: options.eagleFolder.pathLabel || options.eagleFolder.name || "Eagle",
-            outputFileName: outputTarget.fileName
+            outputFileName: outputTarget.fileName,
+            outputFileSize
           });
         } else {
           stats.success += 1;
           options.onItemUpdate(item.id, {
             status: "success",
             statusMessage: path.basename(outputTarget.filePath),
-            outputFileName: outputTarget.fileName
+            outputFileName: outputTarget.fileName,
+            outputFileSize
           });
         }
       } catch (error) {
@@ -128,14 +141,16 @@
           options.onItemUpdate(item.id, {
             status: "canceled",
             statusMessage: t("status.canceled", "Canceled"),
-            outputFileName: outputTarget ? outputTarget.fileName : item.outputFileName
+            outputFileName: outputTarget ? outputTarget.fileName : item.outputFileName,
+            outputFileSize: 0
           });
         } else {
           stats.error += 1;
           options.onItemUpdate(item.id, {
             status: "error",
             statusMessage: error.message,
-            outputFileName: outputTarget ? outputTarget.fileName : item.outputFileName
+            outputFileName: outputTarget ? outputTarget.fileName : item.outputFileName,
+            outputFileSize: 0
           });
         }
       } finally {
@@ -189,7 +204,8 @@
           stats.completed += 1;
           options.onItemUpdate(item.id, {
             status: "canceled",
-            statusMessage: t("status.canceled", "Canceled")
+            statusMessage: t("status.canceled", "Canceled"),
+            outputFileSize: 0
           });
           emitProgress();
         }

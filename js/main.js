@@ -123,6 +123,58 @@
     return `${value.toFixed(value >= 10 || unitIndex === 0 ? 0 : 1)} ${units[unitIndex]}`;
   }
 
+  function getPlannedDimensions(item, settings) {
+    if (!Number(item.width) || !Number(item.height)) {
+      return null;
+    }
+
+    return ns.ffmpegService.buildResizeDimensions(item, settings);
+  }
+
+  function estimateOutputBytes(item, settings, dimensions) {
+    const originalBytes = Number(item.size) || 0;
+    const originalPixels = (Number(item.width) || 0) * (Number(item.height) || 0);
+
+    if (!originalBytes || !originalPixels || !dimensions) {
+      return 0;
+    }
+
+    const outputPixels = dimensions.width * dimensions.height;
+    const pixelRatio = outputPixels / originalPixels;
+    let compressionFactor = 1;
+
+    if (settings.outputFormat === "jpg") {
+      compressionFactor = 0.9 * ((Number(settings.quality) || 82) / 82);
+    } else if (settings.outputFormat === "webp") {
+      compressionFactor = 0.7 * ((Number(settings.quality) || 82) / 82);
+    } else if (settings.outputFormat === "png") {
+      compressionFactor = Math.max(0.68, 1 - (Number(settings.pngCompressionLevel) || 0) * 0.035);
+    }
+
+    return Math.max(1, Math.round(originalBytes * pixelRatio * compressionFactor));
+  }
+
+  function getOutputFileSizeLabel(item, settings, dimensions) {
+    const actualBytes = Number(item.outputFileSize) || 0;
+
+    if (actualBytes > 0) {
+      return formatBytes(actualBytes);
+    }
+
+    const estimatedBytes = estimateOutputBytes(item, settings, dimensions);
+    return estimatedBytes ? `~${formatBytes(estimatedBytes)}` : "-";
+  }
+
+  function buildOutputPreview(item, settings) {
+    const dimensions = getPlannedDimensions(item, settings);
+
+    return {
+      fileName: item.outputFileName || ns.namingService.buildOutputFileName(item, settings),
+      dimensionsLabel: dimensions ? `${dimensions.width} x ${dimensions.height}` : "- x -",
+      fileSizeLabel: getOutputFileSizeLabel(item, settings, dimensions)
+    };
+  }
+
   function escapeHtml(value) {
     return String(value)
       .replace(/&/g, "&amp;")
@@ -287,6 +339,18 @@
   }
 
   function patchSettings(patch) {
+    const shouldResetOutputSize = [
+      "outputFormat",
+      "resizeRatio",
+      "quality",
+      "pngCompressionLevel",
+      "outputTargetType",
+      "outputDirectory",
+      "eagleFolderId",
+      "renameMode",
+      "renameText"
+    ].some((key) => Object.prototype.hasOwnProperty.call(patch, key));
+
     store.setState((state) => {
       const normalized = ns.validationService.normalizeSettings({
         ...state.settings,
@@ -295,7 +359,8 @@
 
       const items = state.items.map((item) => ({
         ...item,
-        outputFileName: ns.namingService.buildOutputFileName(item, normalized)
+        outputFileName: ns.namingService.buildOutputFileName(item, normalized),
+        outputFileSize: shouldResetOutputSize ? 0 : item.outputFileSize
       }));
 
       return {
@@ -360,7 +425,7 @@
       .join("");
   }
 
-  function renderItems(items) {
+  function renderItems(items, settings) {
     if (!items.length) {
       refs.itemList.innerHTML = "";
       refs.tableShell.classList.add("is-empty");
@@ -373,6 +438,7 @@
         const thumbMarkup = item.thumbnailURL
           ? `<img src="${escapeHtml(item.thumbnailURL)}" alt="${escapeHtml(item.name)}" />`
           : `<span class="thumb-fallback">${escapeHtml(item.ext || "img")}</span>`;
+        const outputPreview = buildOutputPreview(item, settings);
 
         return `
           <tr>
@@ -390,7 +456,12 @@
               <div class="file-meta">${escapeHtml(formatBytes(item.size))}</div>
             </td>
             <td>
-              <div class="output-name">${escapeHtml(item.outputFileName || "-")}</div>
+              <div class="output-stack">
+                <div class="output-name">${escapeHtml(outputPreview.fileName || "-")}</div>
+                <div class="output-meta">
+                  ${escapeHtml(`${outputPreview.dimensionsLabel} / ${outputPreview.fileSizeLabel}`)}
+                </div>
+              </div>
             </td>
             <td>
               <div class="status-pill status-${escapeHtml(item.status)}">${escapeHtml(getStatusLabel(item.status))}</div>
@@ -405,7 +476,7 @@
   function render(state) {
     syncFormFromState(state);
     renderValidationErrors(state.ui.validationErrors);
-    renderItems(state.items);
+    renderItems(state.items, state.settings);
 
     refs.selectedCount.textContent = String(state.items.length);
     refs.successCount.textContent = String(state.ui.progress.success);
@@ -450,7 +521,8 @@
     const state = store.getState();
     const nextItems = items.map((item) => ({
       ...item,
-      outputFileName: ns.namingService.buildOutputFileName(item, state.settings)
+      outputFileName: ns.namingService.buildOutputFileName(item, state.settings),
+      outputFileSize: 0
     }));
 
     store.setState((current) => ({
@@ -736,7 +808,8 @@
         ...item,
         status: "pending",
         statusMessage: getStatusMessage("pending"),
-        outputFileName: ns.namingService.buildOutputFileName(item, validation.normalized)
+        outputFileName: ns.namingService.buildOutputFileName(item, validation.normalized),
+        outputFileSize: 0
       }));
 
       store.setState((current) => ({

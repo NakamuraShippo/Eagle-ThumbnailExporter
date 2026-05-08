@@ -28,7 +28,7 @@
     return {
       language,
       outputFormat,
-      resizeRatio: clamp(toInteger(base.resizeRatio, 50), 10, 100),
+      resizeRatio: clamp(toInteger(base.resizeRatio, 50), 1, 100),
       quality: clamp(toInteger(base.quality, 82), 1, 100),
       pngCompressionLevel: clamp(toInteger(base.pngCompressionLevel, 6), 0, 9),
       outputTargetType,
@@ -77,8 +77,8 @@
       errors.push(t("validation.chooseEagleFolder", "Please choose an Eagle folder."));
     }
 
-    if (normalized.resizeRatio < 10 || normalized.resizeRatio > 100) {
-      errors.push(t("validation.resizeRatioRange", "The resize ratio must be between 10% and 100%."));
+    if (normalized.resizeRatio < 1 || normalized.resizeRatio > 100) {
+      errors.push(t("validation.resizeRatioRange", "The resize ratio must be between 1% and 100%."));
     }
 
     if (normalized.outputFormat === "png") {

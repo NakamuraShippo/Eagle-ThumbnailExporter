@@ -115,7 +115,7 @@
     "selectItems": "請至少在 Eagle 中選取一張圖片。",
     "chooseOutputDirectory": "請選擇輸出資料夾。",
     "chooseEagleFolder": "請選擇 Eagle 資料夾。",
-    "resizeRatioRange": "縮放比例必須介於 10% 到 100% 之間。",
+    "resizeRatioRange": "縮放比例必須介於 1% 到 100% 之間。",
     "pngCompressionRange": "PNG 壓縮等級必須介於 0 到 9 之間。",
     "qualityRange": "品質必須介於 1 到 100 之間。",
     "renameTextLength": "重新命名文字必須在 80 個字元以內。",

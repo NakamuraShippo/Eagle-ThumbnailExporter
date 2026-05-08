@@ -115,7 +115,7 @@
     "selectItems": "Please select at least one image in Eagle.",
     "chooseOutputDirectory": "Please choose an output folder.",
     "chooseEagleFolder": "Please choose an Eagle folder.",
-    "resizeRatioRange": "The resize ratio must be between 10% and 100%.",
+    "resizeRatioRange": "The resize ratio must be between 1% and 100%.",
     "pngCompressionRange": "PNG compression level must be between 0 and 9.",
     "qualityRange": "Quality must be between 1 and 100.",
     "renameTextLength": "Rename text must be 80 characters or fewer.",

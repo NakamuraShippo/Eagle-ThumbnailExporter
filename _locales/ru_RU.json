@@ -115,7 +115,7 @@
     "selectItems": "Выберите хотя бы одно изображение в Eagle.",
     "chooseOutputDirectory": "Выберите папку вывода.",
     "chooseEagleFolder": "Выберите папку Eagle.",
-    "resizeRatioRange": "Коэффициент уменьшения должен быть от 10% до 100%.",
+    "resizeRatioRange": "Коэффициент уменьшения должен быть от 1% до 100%.",
     "pngCompressionRange": "Уровень сжатия PNG должен быть от 0 до 9.",
     "qualityRange": "Качество должно быть от 1 до 100.",
     "renameTextLength": "Текст переименования должен быть не длиннее 80 символов.",

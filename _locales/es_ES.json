@@ -115,7 +115,7 @@
     "selectItems": "Selecciona al menos una imagen en Eagle.",
     "chooseOutputDirectory": "Selecciona una carpeta de salida.",
     "chooseEagleFolder": "Selecciona una carpeta de Eagle.",
-    "resizeRatioRange": "La proporción de escala debe estar entre el 10% y el 100%.",
+    "resizeRatioRange": "La proporción de escala debe estar entre el 1% y el 100%.",
     "pngCompressionRange": "El nivel de compresión PNG debe estar entre 0 y 9.",
     "qualityRange": "La calidad debe estar entre 1 y 100.",
     "renameTextLength": "El texto de renombrado debe tener 80 caracteres o menos.",

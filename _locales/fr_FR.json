@@ -115,7 +115,7 @@
     "selectItems": "Veuillez sélectionner au moins une image dans Eagle.",
     "chooseOutputDirectory": "Veuillez choisir un dossier de sortie.",
     "chooseEagleFolder": "Veuillez choisir un dossier Eagle.",
-    "resizeRatioRange": "Le taux de redimensionnement doit être compris entre 10% et 100%.",
+    "resizeRatioRange": "Le taux de redimensionnement doit être compris entre 1% et 100%.",
     "pngCompressionRange": "Le niveau de compression PNG doit être compris entre 0 et 9.",
     "qualityRange": "La qualité doit être comprise entre 1 et 100.",
     "renameTextLength": "Le texte de renommage doit comporter 80 caractères maximum.",
